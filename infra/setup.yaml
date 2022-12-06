@@ -1,0 +1,17 @@
+---
+apiVersion: infra.contrib.fluxcd.io/v1alpha1
+kind: Terraform
+metadata:
+  name: helloworld-terraform-11
+spec:
+  path: ./terraform
+  workspace: prod
+  backendConfig:
+    secretSuffix: test-hello
+  approvePlan: auto
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: helloworld-tf-test
+  writeOutputsToSecret:
+    name: helloworld-outputs
