@@ -13,5 +13,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: helloworld-tf-test
+    namespace: flux-system
   writeOutputsToSecret:
     name: helloworld-outputs
